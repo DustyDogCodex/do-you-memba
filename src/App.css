@@ -5,3 +5,11 @@
 body {
   margin: 0;
 }
+
+/* styling for the header component */
+header{
+  text-align: center;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
