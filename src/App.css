@@ -13,3 +13,11 @@ header{
   margin-bottom: 20px;
   border: 1px solid black;
 }
+
+/* styling for the card component */
+.card{
+  height: 300px;
+  width: 250px;
+  background: salmon;
+  margin: 10px;
+}
