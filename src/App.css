@@ -14,10 +14,25 @@ header{
   border: 1px solid black;
 }
 
+/* styling for the main display component */
+.main {
+  display: flex;
+}
+
+.card-display {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.score-display{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* styling for the card component */
 .card{
-  height: 300px;
-  width: 250px;
+  height: 275px;
+  width: 225px;
   background: salmon;
   margin: 10px;
 }
