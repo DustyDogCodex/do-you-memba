@@ -17,6 +17,8 @@ header{
 /* styling for the main display component */
 .main {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card-display {

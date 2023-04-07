@@ -15,6 +15,8 @@ function MainDisplay(){
                 <Card />
                 <Card />
                 <Card />
+                <Card />
+                <Card />
             </div>
             <div className="score-display">
                 <span>Current Score:</span>
