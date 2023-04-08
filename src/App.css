@@ -37,4 +37,11 @@ header{
   width: 225px;
   background: salmon;
   margin: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.card img{
+  width: 223px;
+  height: 240px;
 }
