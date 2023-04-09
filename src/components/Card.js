@@ -1,5 +1,5 @@
 //this is the component for the individual cards that will be displayed for the user to click
-function Card({ name, image }){
+function Card({ name, image, alreadyClicked }){
     return(
         <div className="card">
             <img src={image} alt="character from king of the hill" />

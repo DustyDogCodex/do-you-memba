@@ -7,58 +7,70 @@ function MainDisplay(){
     const kingsOfTheHill = [
         {
             name: 'Bill Dauterive',
-            image: './images/bill-dauterive.jpeg'
+            image: './images/bill-dauterive.jpeg',
+            alreadyClicked: false
         },
         {
             name: 'Bobby Hill',
-            image: './images/bobby-hill.jpg'
+            image: './images/bobby-hill.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Boomhauser',
-            image: './images/boomhauser.jpeg'
+            image: './images/boomhauser.jpeg',
+            alreadyClicked: false
         },
         {
             name: 'Cotton Hill',
-            image: './images/cotton-hill.jpg'
+            image: './images/cotton-hill.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Dale Gribble',
-            image: './images/dale-gribble.jpg'
+            image: './images/dale-gribble.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Hank Hill',
-            image: './images/hank-hill.jpeg'
+            image: './images/hank-hill.jpeg',
+            alreadyClicked: false
         },
         {
             name: 'John Redcorn',
-            image: './images/john-redcorn.jpg'
+            image: './images/john-redcorn.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Kahn Souphanousinphone',
-            image: './images/kahn-souphanousinphone.jpg'
+            image: './images/kahn-souphanousinphone.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Luanne Platter',
-            image: './images/luanne-platter.jpg'
+            image: './images/luanne-platter.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Minh Souphanousinphone',
-            image: './images/Minh_Souphanousinphone.jpg'
+            image: './images/Minh_Souphanousinphone.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Nancy Gribble',
-            image: './images/nancy-gribble.jpg'
+            image: './images/nancy-gribble.jpg',
+            alreadyClicked: false
         },
         {
             name: 'Peggy Hill',
-            image: './images/peggy-hill.jpg'
+            image: './images/peggy-hill.jpg',
+            alreadyClicked: false
         },
     ]
 
     //array containging card elements with character images and names
     const kingsElements = kingsOfTheHill.map(king => {
         return (
-            <Card name={king.name} image={king.image}/>
+            <Card name={king.name} image={king.image} alreadyClicked={alreadyClicked}/>
         )
     })
 
