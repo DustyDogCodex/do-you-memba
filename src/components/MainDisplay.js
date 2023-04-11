@@ -1,13 +1,15 @@
 //this component will serve as the main display board for the project. It will display 10 cards for the player to click on the left and a scoreboard on the right
 import Card from "./Card"
 
-function MainDisplay({ cards, startShuffle }){
+function MainDisplay({ cards, score, startShuffle }){
 
     //array containging card elements with character images and names
     const kingsElements = cards.map((king,index) => {
         return (
             <Card 
                 key={index}
+                id={king.id}
+                score={score}
                 name={king.name} 
                 image={king.image} 
                 alreadyClicked={king.alreadyClicked} 

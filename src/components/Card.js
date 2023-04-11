@@ -1,8 +1,9 @@
 //this is the component for the individual cards that will be displayed for the user to click
-function Card({ name, image, alreadyClicked, startShuffle }){
+function Card({ id, name, image, alreadyClicked, startShuffle }){
+
     return(
-        <div className="card" onClick={() => startShuffle()}>
-            <img src={image} alt="character from king of the hill" />
+        <div className="card" onClick={(e) => startShuffle(e.target.id)}>
+            <img id={id} src={image} alt="character from king of the hill" />
             <span>{name}</span>
         </div>
     )
