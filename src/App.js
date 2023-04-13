@@ -89,8 +89,7 @@ function App() {
   //function to shuffle cards when one has been clicked
   //this is a version of Schwartzian transform in JS.
   function startShuffle(id){
-    console.log(id)
-  
+
     //shuffle cards
     let shuffled = cards
     .map(value => ({ value, sort: Math.random() }))
@@ -98,9 +97,21 @@ function App() {
     .map(({ value }) => value)
     //toggle alreadyClicked values
     .map(card => card.id === id ? {...card, alreadyClicked: !card.alreadyClicked } : card)
-    console.log(shuffled)
+
+    //checking to see if the card has already been clicked before
+    const selected_card = cards.filter(card => card.id === id)
+    //selected_card[0] since filter returns an array with the card object inside it.
+    if(selected_card[0].alreadyClicked){
+      //if card was alreadyClicked, reset the score to zero and all alreadyClicked values to false
+      setScore(0)
+      setCards(cards.map(card => ({ ...card, alreadyClicked: false })))
+     } else {
+      setScore(score + 1)
+    }
+
     //set cards to the new shuffled values
     setCards(shuffled)
+
   }
   
   return (

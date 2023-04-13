@@ -24,7 +24,8 @@ function MainDisplay({ cards, score, startShuffle }){
                 {kingsElements}
             </div>
             <div className="score-display">
-                <span>Current Score:</span>
+                <span style={{marginBottom: '20px'}}>Current Score</span>
+                {score}
             </div>
         </div>
     )
