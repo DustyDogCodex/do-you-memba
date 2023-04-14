@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header.js'
 import MainDisplay from './components/MainDisplay.js'
 import { v4 as uuidv4 } from 'uuid';
+import Confetti from 'react-confetti';
 
 function App() {
 
@@ -95,8 +96,6 @@ function App() {
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value)
-    //toggle alreadyClicked values
-    .map(card => card.id === id ? {...card, alreadyClicked: !card.alreadyClicked } : card)
 
     //checking to see if the card has already been clicked before
     const selected_card = cards.filter(card => card.id === id)
@@ -104,13 +103,13 @@ function App() {
     if(selected_card[0].alreadyClicked){
       //if card was alreadyClicked, reset the score to zero and all alreadyClicked values to false
       setScore(0)
-      setCards(cards.map(card => ({ ...card, alreadyClicked: false })))
+      setCards(shuffled.map(card => ({ ...card, alreadyClicked: false })))
      } else {
+      //if card wasn't already clicked, the game continues and we flip that cards alreadyClicked value.
       setScore(score + 1)
+      //toggle alreadyClicked values
+      setCards(shuffled.map(card => card.id === id ? {...card, alreadyClicked: !card.alreadyClicked } : card))
     }
-
-    //set cards to the new shuffled values
-    setCards(shuffled)
 
   }
   
@@ -118,6 +117,7 @@ function App() {
     <div className="App">
       <Header />
       <MainDisplay cards={cards} score={score} startShuffle={startShuffle} />
+      {score === 12 && <Confetti />}
     </div>
   );
 }
