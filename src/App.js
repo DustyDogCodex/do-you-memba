@@ -82,6 +82,8 @@ function App() {
           alreadyClicked: false
         },
   ]
+  //varibale for tracking high score
+  let high_score = 0
 
   //using state to keep track of cards
   const [cards, setCards] = useState(kingsOfTheHill)
@@ -107,6 +109,9 @@ function App() {
      } else {
       //if card wasn't already clicked, the game continues and we flip that cards alreadyClicked value.
       setScore(score + 1)
+      if(score > high_score){
+        high_score = score
+      }
       //toggle alreadyClicked values
       setCards(shuffled.map(card => card.id === id ? {...card, alreadyClicked: !card.alreadyClicked } : card))
     }
@@ -116,7 +121,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MainDisplay cards={cards} score={score} startShuffle={startShuffle} />
+      <MainDisplay cards={cards} score={score} highScore={high_score} startShuffle={startShuffle} />
       {score === 12 && <Confetti />}
     </div>
   );
