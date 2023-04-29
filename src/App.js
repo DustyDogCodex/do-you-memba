@@ -82,13 +82,11 @@ function App() {
           alreadyClicked: false
         },
   ]
-  //varibale for tracking high score
-  let high_score = 0
 
-  //using state to keep track of cards
+  //using state to keep track of cards,score and highScore
   const [cards, setCards] = useState(kingsOfTheHill)
   const [score, setScore] = useState(0)
-  
+  const [highScore, setHighScore] = useState(0)
   //function to shuffle cards when one has been clicked
   //this is a version of Schwartzian transform in JS.
   function startShuffle(id){
@@ -104,14 +102,14 @@ function App() {
     //selected_card[0] since filter returns an array with the card object inside it.
     if(selected_card[0].alreadyClicked){
       //if card was alreadyClicked, reset the score to zero and all alreadyClicked values to false
+      if(score > highScore){
+        setHighScore(score)
+      }
       setScore(0)
       setCards(shuffled.map(card => ({ ...card, alreadyClicked: false })))
      } else {
       //if card wasn't already clicked, the game continues and we flip that cards alreadyClicked value.
       setScore(score + 1)
-      if(score > high_score){
-        high_score = score
-      }
       //toggle alreadyClicked values
       setCards(shuffled.map(card => card.id === id ? {...card, alreadyClicked: !card.alreadyClicked } : card))
     }
@@ -121,7 +119,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MainDisplay cards={cards} score={score} highScore={high_score} startShuffle={startShuffle} />
+      <MainDisplay cards={cards} score={score} highScore={highScore} startShuffle={startShuffle} />
       {score === 12 && <Confetti />}
     </div>
   );
