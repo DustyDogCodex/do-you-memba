@@ -4,7 +4,7 @@ Built using ReactJS.
 
 ![south-park-memba-berries](https://tenor.com/view/you-member-memberberries-south-park-you-remember-remember-that-time-gif-20408216.gif)
 
-<a href="https://dustydogcodex.github.io/do-you-memba/"> LIVE DEMO </a>
+<a href="https://dustydogcodex.github.io/do-you-memba/" target="_blank" rel="noreferrer noopener"> LIVE DEMO </a>
 
 For this project, I created a memory card game where the user has to click through a selection of 12 cards without clicking on any card more than once.
 
