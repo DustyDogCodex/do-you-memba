@@ -2,6 +2,8 @@
 
 Built using ReactJS.
 
+<h2 align='center'> IN THE PROCESS OF IMPROVING RESPONSIVENSS </h2>
+
 ![south-park-memba-berries](https://tenor.com/view/you-member-memberberries-south-park-you-remember-remember-that-time-gif-20408216.gif)
 
 <a href="https://dustydogcodex.github.io/do-you-memba/" target="_blank" rel="noreferrer noopener"> LIVE DEMO </a>
