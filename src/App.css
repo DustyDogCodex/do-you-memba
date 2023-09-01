@@ -2,74 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
-}
-
-body {
-  margin: 0;
-  background: rgb(155, 221, 255);
-}
-
-/* styling for the header component */
-header{
-  color: rgb(255, 235, 205);
-  text-align: center;
-  padding: 20px 40px;
-  margin-bottom: 20px;
-  font-size: 22px;
-}
-
-header a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* styling for the main display component */
-.main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.card-display {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.score-display{
-  color: rgb(255, 215, 0);
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* styling for the card component */
-.card{
-  height: 275px;
-  width: 225px;
-  background: salmon;
-  margin: 10px;
-  text-align: center;
-  border: 1px solid black;
-}
-
-.card:hover{
-  transform: scale(1.1);
-  cursor: pointer;
-  box-shadow: 5px 5px 5px goldenrod;
-}
-
-.card img{
-  width: 223px;
-  height: 240px;
-}
-
-@media (min-width:1200px) {
-  body{
-    padding: 1% 20%;
-  }
+@layer base {
+    html {
+        font-family: 'Neucha', cursive;
+    }
 }

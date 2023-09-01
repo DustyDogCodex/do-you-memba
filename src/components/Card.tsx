@@ -9,13 +9,14 @@ type Props = {
 function Card({ id, name, image, startShuffle }: Props){
     return(
         <div 
-            className="card" 
+            className="h-80 w-60 bg-orange-200 text-center text-xl cursor-pointer hover:scale-110 hover:shadow-fuchsia-500 shadow-xl" 
             id={id}
             onClick={() => startShuffle(id)}
         >
             <img 
                 src={image} 
-                alt="character from king of the hill" 
+                alt="character from king of the hill"
+                className="h-[90%] w-full" 
             />
             <span>{name}</span>
         </div>

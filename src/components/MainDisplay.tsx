@@ -10,28 +10,31 @@ type Props = {
 }
 
 function MainDisplay({ cards, score, highScore, startShuffle }: Props) {
-
-    //array containging card elements with character images and names
-    const kingsElements = cards.map((king: KingProps, index: number) => 
-        <Card 
-            key={index}
-            id={king.id}
-            name={king.name} 
-            image={king.image}  
-            startShuffle={startShuffle}
-        />
-    )
-
     return(
-        <div className="main">
-            <div className="card-display">
-                {kingsElements}
+        <div
+            className="flex flex-col items-center justify-between"
+        >
+            {/* current score and high score */}
+            <div 
+                className="text-light-gold text-2xl flex items-center mb-5"
+            >
+                <span className="mr-10">Current Score {score}</span>
+                <span>High Score {highScore}</span>
             </div>
-            <div className="score-display">
-                <span style={{marginBottom: '20px'}}>Current Score</span>
-                {score}
-                <span style={{margin: '20px 0px'}}>High Score</span>
-                {highScore}
+
+            {/* grid display of all available cards */}
+            <div 
+                className="grid grid-cols-4 gap-8"
+            >
+                {cards.map((king: KingProps, index: number) => 
+                    <Card 
+                        key={index}
+                        id={king.id}
+                        name={king.name} 
+                        image={king.image}  
+                        startShuffle={startShuffle}
+                    />
+                )}
             </div>
         </div>
     )

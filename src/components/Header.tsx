@@ -1,16 +1,18 @@
 //this component contains the intro to the website
 function Header() {
     return (
-        <header>
+        <header
+            className="text-light-gold text-center p-3 mb-2"
+        >
             <a 
                 href="https://www.youtube.com/watch?v=Ncps_RYHoAI" 
                 target="_blank" 
                 rel="noreferrer"
             >
-                <h1>Do You Memba?</h1>
+                <h1 className="text-5xl">Do You Memba?</h1>
             </a>
             
-            <p>
+            <p className="text-2xl">
                 Welcome to a game that will test your memory skills! The rules are simple: click on 12 cards without clicking on the same card twice! You will need to remember which cards you have clicked because the cards will reshuffle after every click!
             </p>
         </header>
