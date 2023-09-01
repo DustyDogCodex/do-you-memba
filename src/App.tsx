@@ -4,6 +4,7 @@ import Header from './components/Header'
 import MainDisplay from './components/MainDisplay'
 import { v4 as uuidv4 } from 'uuid'
 import Confetti from 'react-confetti'
+import WinMessage from './components/WinMessage'
 
 export type KingProps = { 
     id: string, 
@@ -124,9 +125,14 @@ function App() {
         }
     }
 
+    //start a new game after winning
+    function newGame(){
+        setScore(0)
+    }
+
     return (
         <div
-            className='h-screen flex flex-col items-center justify-center bg-gradient-radial from-violet-900 via-gray-900 to-black'
+            className='min-h-screen h-full w-screen flex flex-col items-center bg-gradient-radial from-violet-900 via-gray-900 to-black'
         >
             <Header 
                 score={score} 
@@ -136,7 +142,8 @@ function App() {
                 cards={cards} 
                 startShuffle={startShuffle} 
             />
-            {score === 12 && <Confetti />}
+            {score === 12 && <Confetti />} 
+            {score === 12 && <WinMessage newGame={newGame}/>}
         </div>
     )
 }

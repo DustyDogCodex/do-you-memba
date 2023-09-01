@@ -20,7 +20,7 @@ function Card({ id, name, image, startShuffle }: Props){
             variants={cardAnimation}
         >
             <div 
-                className="h-80 w-60 bg-orange-200 rounded-xl text-center text-xl cursor-pointer hover:scale-110 hover:shadow-amber-500 transition duration-300 shadow-xl" 
+                className="h-full md:h-80 w-60 bg-orange-200 rounded-xl text-center text-xl hover:scale-110 hover:shadow-amber-500 transition duration-300 shadow-xl" 
                 id={id}
                 onClick={() => startShuffle(id)}
             >
