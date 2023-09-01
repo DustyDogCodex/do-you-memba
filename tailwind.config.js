@@ -8,6 +8,9 @@ export default {
     extend: {
         colors:{
             'light-gold': 'rgb(255, 235, 205)'
+        },
+        backgroundImage: {
+            'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         }
     },
   },

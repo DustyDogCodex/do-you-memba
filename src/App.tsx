@@ -126,7 +126,7 @@ function App() {
 
     return (
         <div
-            className='h-screen flex flex-col items-center justify-center bg-black'
+            className='h-screen flex flex-col items-center justify-center bg-gradient-radial from-violet-900 via-gray-900 to-black'
         >
             <Header />
             <MainDisplay 
