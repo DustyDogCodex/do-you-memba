@@ -128,6 +128,7 @@ function App() {
     //start a new game after winning
     function newGame(){
         setScore(0)
+        setHighScore(12)
     }
 
     return (
