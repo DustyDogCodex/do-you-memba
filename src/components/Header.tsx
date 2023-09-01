@@ -1,8 +1,23 @@
-//this component contains the intro to the website
-function Header() {
+//header for the website
+import { motion } from "framer-motion"
+
+type Props = {
+    score: number,
+    highScore: number,
+}
+
+function Header({ score, highScore }: Props) {
     return (
-        <header
-            className="text-light-gold text-center p-3 mb-2"
+        <motion.div
+            className="text-light-gold text-center p-3 mb-2 flex flex-col items-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 1 }}
+            variants={{
+                hidden: { opacity: 0, y: -50 },
+                visible: { opacity: 1, y: 0}
+            }}
         >
             <a 
                 href="https://www.youtube.com/watch?v=Ncps_RYHoAI" 
@@ -15,7 +30,14 @@ function Header() {
             <p className="text-2xl">
                 Welcome to a game that will test your memory skills! The rules are simple: click on 12 cards without clicking on the same card twice! You will need to remember which cards you have clicked because the cards will reshuffle after every click!
             </p>
-        </header>
+
+            <div
+                className="text-2xl flex items-center mt-3 mb-3"
+            >
+                <span className="mr-10">Current Score {score}</span>
+                <span>High Score {highScore}</span>
+            </div>
+        </motion.div>
     )
 }
 

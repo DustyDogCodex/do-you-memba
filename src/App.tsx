@@ -128,11 +128,12 @@ function App() {
         <div
             className='h-screen flex flex-col items-center justify-center bg-gradient-radial from-violet-900 via-gray-900 to-black'
         >
-            <Header />
-            <MainDisplay 
-                cards={cards} 
+            <Header 
                 score={score} 
                 highScore={highScore} 
+            />
+            <MainDisplay 
+                cards={cards} 
                 startShuffle={startShuffle} 
             />
             {score === 12 && <Confetti />}
