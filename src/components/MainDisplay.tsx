@@ -23,7 +23,7 @@ function MainDisplay({ cards, startShuffle }: Props) {
 
     //checking for small/mobile screens
     const aboveMediumScreens = useMediaQuery('(min-width: 1060px)')
-    console.log(aboveMediumScreens)
+
     return(
         <div
             className="flex flex-col md:flex-row items-center justify-between"
